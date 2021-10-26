@@ -222,6 +222,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="banana" destination="gvk-pA-Lw5" id="aQX-mt-TJ1"/>
+                        <outlet property="straw" destination="Qas-vP-td6" id="qvw-H7-yqJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

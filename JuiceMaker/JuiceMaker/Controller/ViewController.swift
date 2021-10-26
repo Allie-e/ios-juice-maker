@@ -13,6 +13,11 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    
+    @IBOutlet weak var strawberry: UILabel!
+    @IBOutlet weak var banana: UILabel!
+    
+    
+    
 }
 
