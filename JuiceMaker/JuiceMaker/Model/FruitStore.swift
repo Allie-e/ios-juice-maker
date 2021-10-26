@@ -23,6 +23,13 @@ class FruitStore {
         }
     }
     
+//    func bindingStock(of fruit: Fruit) throws -> Int {
+//        guard let stock = stockOfFruit[fruit] else {
+//            throw JuiceMakerError.invalidNumber
+//        }
+//        return stock
+//    }
+    
     private func checkStock(of fruit: Fruit, count: Int) throws {
         guard count >= 0 else {
             throw JuiceMakerError.invalidNumber

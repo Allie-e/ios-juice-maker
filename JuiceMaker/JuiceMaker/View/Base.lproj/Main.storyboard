@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DCG-dP-Fms">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DCG-dP-Fms">
     <device id="retina6_0" orientation="landscape" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -229,12 +229,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="banana" destination="gvk-pA-Lw5" id="aQX-mt-TJ1"/>
                         <outlet property="bananaLabel" destination="gvk-pA-Lw5" id="2rf-il-9dg"/>
                         <outlet property="kiwiLabel" destination="FZq-de-TJG" id="fHF-iO-nEM"/>
                         <outlet property="mangoLabel" destination="3Ce-SU-JeH" id="uz7-Wa-Qef"/>
                         <outlet property="pineappleLabel" destination="ccQ-Dk-PuY" id="5v8-se-0v0"/>
-                        <outlet property="straw" destination="Qas-vP-td6" id="qvw-H7-yqJ"/>
                         <outlet property="strawberryLabel" destination="Qas-vP-td6" id="4G9-w0-3Fk"/>
                     </connections>
                 </viewController>

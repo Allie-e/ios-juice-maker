@@ -17,24 +17,37 @@ class ViewController: UIViewController {
     @IBOutlet weak var kiwiLabel: UILabel!
     @IBOutlet weak var mangoLabel: UILabel!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        showDefaultStock()
     }
-
-
-    @IBAction func orderStrawberryJuice(_ sender: UIButton) {
+    
+    func showDefaultStock() {
         if let stock = fruitStore.stockOfFruit[.strawberry] {
             strawberryLabel.text = String(stock)
         }
+        if let stock = fruitStore.stockOfFruit[.banana] {
+            bananaLabel.text = String(stock)
+        }
+        if let stock = fruitStore.stockOfFruit[.pineapple] {
+            pineappleLabel.text = String(stock)
+        }
+        if let stock = fruitStore.stockOfFruit[.kiwi] {
+            kiwiLabel.text = String(stock)
+        }
+        if let stock = fruitStore.stockOfFruit[.mango] {
+            mangoLabel.text = String(stock)
+        }
+    }
+
+    @IBAction func orderStrawberryJuice(_ sender: UIButton) {
         juiceMaker.makeFruitJuice(juice: .strawberryJuice)
         
     }
     
-//     @IBAction func orderBananaJuice(_ sender: UIButton) {
-//        juiceMaker.makeFruitJuice(juice: .bananaJuice)
-//    }
+     @IBAction func orderBananaJuice(_ sender: UIButton) {
+        juiceMaker.makeFruitJuice(juice: .bananaJuice)
+    }
     
     
 }
