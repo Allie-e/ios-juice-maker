@@ -150,6 +150,9 @@
                                                         <state key="normal" title="딸바쥬스 주문">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="orderStrawberryJuice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="akF-9B-Oxy"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y2A-PH-DJY">
                                                         <rect key="frame" x="148" y="0.0" width="132" height="66.333333333333329"/>
@@ -158,6 +161,9 @@
                                                         <state key="normal" title="바나나쥬스 주문">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="orderBananaJuice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gah-Nj-YN8"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -224,7 +230,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="banana" destination="gvk-pA-Lw5" id="aQX-mt-TJ1"/>
+                        <outlet property="bananaLabel" destination="gvk-pA-Lw5" id="2rf-il-9dg"/>
+                        <outlet property="kiwiLabel" destination="FZq-de-TJG" id="fHF-iO-nEM"/>
+                        <outlet property="mangoLabel" destination="3Ce-SU-JeH" id="uz7-Wa-Qef"/>
+                        <outlet property="pineappleLabel" destination="ccQ-Dk-PuY" id="5v8-se-0v0"/>
                         <outlet property="straw" destination="Qas-vP-td6" id="qvw-H7-yqJ"/>
+                        <outlet property="strawberryLabel" destination="Qas-vP-td6" id="4G9-w0-3Fk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

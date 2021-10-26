@@ -15,7 +15,7 @@ class FruitStore {
         }
     }
     
-    private var stockOfFruit: [Fruit: Int] = [:]
+   var stockOfFruit: [Fruit: Int] = [:]
     
     init() {
         for fruit in Fruit.allCases {
