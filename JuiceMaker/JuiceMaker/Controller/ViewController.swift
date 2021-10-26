@@ -49,6 +49,8 @@ class ViewController: UIViewController {
         juiceMaker.makeFruitJuice(juice: .bananaJuice)
     }
     
+    @IBAction func orderStrawberryBananaJuice(_ sender: UIButton) {
+    }
     
 }
 
