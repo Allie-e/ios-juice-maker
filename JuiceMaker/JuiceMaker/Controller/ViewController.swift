@@ -39,18 +39,29 @@ class ViewController: UIViewController {
             mangoLabel.text = String(stock)
         }
     }
-
+    
     @IBAction func orderStrawberryJuice(_ sender: UIButton) {
         juiceMaker.makeFruitJuice(juice: .strawberryJuice)
         
     }
     
-     @IBAction func orderBananaJuice(_ sender: UIButton) {
+    @IBAction func orderBananaJuice(_ sender: UIButton) {
         juiceMaker.makeFruitJuice(juice: .bananaJuice)
     }
     
     @IBAction func orderStrawberryBananaJuice(_ sender: UIButton) {
     }
     
+    @IBAction func mangoButton(_ sender: UIButton) {
+        let someAlert = UIAlertController(title: "알람이다", message: "만들었다", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "확인", style: .default)
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel)
+        
+        someAlert.addAction(okAction)
+        someAlert.addAction(cancelAction)
+        
+        present(someAlert, animated: true)
+        
+    }
 }
 
