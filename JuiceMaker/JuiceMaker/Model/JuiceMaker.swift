@@ -6,6 +6,13 @@
 
 import Foundation
 
+let notificationCenter: NotificationCenter = .default
+
+extension Notification.Name {
+    static let changeOfStock = Notification.Name("changeOfStock")
+    static let outOfStock = Notification.Name("outOfStock")
+}
+
 struct JuiceMaker {
     enum Menu {
         case strawberryJuice
