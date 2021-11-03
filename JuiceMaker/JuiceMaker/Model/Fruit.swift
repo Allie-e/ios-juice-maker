@@ -9,6 +9,7 @@ import Foundation
 
 enum Fruit: String, CaseIterable {
     case strawberry, banana, pineapple, kiwi, mango
+    
     static let initialValue = 10
     
     var stringValue: String {

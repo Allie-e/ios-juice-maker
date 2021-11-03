@@ -6,8 +6,9 @@
 
 import Foundation
 
+
 class FruitStore {
-    private var stockOfFruit: [Fruit: Int] = [:]
+    private(set) var stockOfFruit: [Fruit: Int] = [:]
     
     init() {
         for fruit in Fruit.allCases {

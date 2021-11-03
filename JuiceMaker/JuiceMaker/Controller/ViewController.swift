@@ -35,8 +35,11 @@ class ViewController: UIViewController {
                                        name: Notification.Name.stockInformation,
                                        object: nil)
     }
+   
+ 
     
     private func updateFruitLabel(for fruit: Fruit, stock: Int) {
+        
         switch fruit {
         case .strawberry:
             strawberryLabel.text = String(stock)
@@ -57,6 +60,8 @@ class ViewController: UIViewController {
         if let fruit = userInfo?[NotificationKey.fruit] as? Fruit,
            let stock = userInfo?[NotificationKey.stock] as? Int,
            let orderComplete = userInfo?[NotificationKey.orderComplete] as? Bool {
+            
+            
             if orderComplete {
                 updateFruitLabel(for: fruit, stock: stock)
                 return
@@ -64,6 +69,19 @@ class ViewController: UIViewController {
             showOrderFailAlert(fruit: fruit)
         }
     }
+    
+    @IBAction func showSecondViewController(_ sender: UIBarButtonItem) {
+        show()
+    }
+    
+    func show() {
+        let stockController = self.storyboard?.instantiateViewController(withIdentifier: "StockUpdateController") as? StockUpdateController
+        stockController?.stockOfFruit = juiceMaker.stockOfFruit
+        
+        let nav = UINavigationController(rootViewController: stockController!)
+        present(nav, animated: true)
+    }
+    
     
     @IBAction private func tapJuiceOrderButton(_ sender: UIButton) {
         do {
@@ -96,9 +114,9 @@ class ViewController: UIViewController {
         let message = fruit.description + AlertMessage.outOfStock
         let cancelAction = UIAlertAction(title:AlertMessage.cancel, style: .cancel)
         let okAction = UIAlertAction(title: AlertMessage.ok, style: .default) { _ in
-            if let stockController = self.storyboard?.instantiateViewController(withIdentifier: "StockUpdateController") {
-                self.present(stockController, animated: true)
-            }
+            
+            self.show()
+            
         }
         let orderFailAlert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         
@@ -106,4 +124,8 @@ class ViewController: UIViewController {
         orderFailAlert.addAction(cancelAction)
         present(orderFailAlert, animated: true, completion: nil)
     }
+    
+    
+   
 }
+
