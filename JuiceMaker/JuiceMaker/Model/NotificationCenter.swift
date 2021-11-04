@@ -11,7 +11,7 @@ let notificationCenter = NotificationCenter.default
 
 extension Notification.Name {
     static let stockInformation = Notification.Name("stockInformation")
-    static let stockError = Notification.Name("stockError")
+    static let new = Notification.Name("new")
 }
 
 enum NotificationKey {

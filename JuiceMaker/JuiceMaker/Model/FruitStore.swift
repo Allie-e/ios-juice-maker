@@ -14,6 +14,15 @@ class FruitStore {
         for fruit in Fruit.allCases {
             stockOfFruit[fruit] = Fruit.initialValue
         }
+        
+        notificationCenter.addObserver(self, selector: #selector(didReceiveInfo), name: Notification.Name.new, object: nil)
+    }
+    
+    @objc func didReceiveInfo(noti: Notification) {
+        print("정보 받음")
+        if let stockOfFruit = noti.userInfo?["new"] as? [Fruit: Int] {
+            self.stockOfFruit = stockOfFruit
+        }
     }
     
     private func postNotification(for fruit: Fruit, stock: Int, succeed: Bool) {
@@ -23,6 +32,8 @@ class FruitStore {
                                            NotificationKey.stock: stock,
                                            NotificationKey.orderComplete: succeed])
     }
+    
+   
     
     private func hasEnoughStock(of fruit: Fruit, amount: Int) -> Bool {
         if let fruitAmount = stockOfFruit[fruit], fruitAmount >= amount {

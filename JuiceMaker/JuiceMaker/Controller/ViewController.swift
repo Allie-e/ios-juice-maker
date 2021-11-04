@@ -7,7 +7,9 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
     let juiceMaker = JuiceMaker()
+    
     
     @IBOutlet private weak var strawberryLabel: UILabel!
     @IBOutlet private weak var bananaLabel: UILabel!
@@ -15,18 +17,15 @@ class ViewController: UIViewController {
     @IBOutlet private weak var kiwiLabel: UILabel!
     @IBOutlet private weak var mangoLabel: UILabel!
     
+    
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        showInitialStock()
+        
         addObserverForStockUpdate()
-    }
-    
-    private func showInitialStock() {
-        strawberryLabel.text = String(Fruit.initialValue)
-        bananaLabel.text = String(Fruit.initialValue)
-        pineappleLabel.text = String(Fruit.initialValue)
-        kiwiLabel.text = String(Fruit.initialValue)
-        mangoLabel.text = String(Fruit.initialValue)
+        showInitialStock()
+        addNewObserver()
     }
     
     private func addObserverForStockUpdate() {
@@ -35,10 +34,32 @@ class ViewController: UIViewController {
                                        name: Notification.Name.stockInformation,
                                        object: nil)
     }
-   
- 
     
-    private func updateFruitLabel(for fruit: Fruit, stock: Int) {
+    func addNewObserver() {
+        notificationCenter.addObserver(self,
+                                       selector: #selector(didReceiveInfo),
+                                       name: Notification.Name.new,
+                                       object: nil)
+    }
+
+    @objc func didReceiveInfo() {
+        let stockOfFruit = juiceMaker.stockOfFruit
+        
+        for (fruit, stock) in stockOfFruit {
+            updateFruitLabel(for: fruit, stock: stock)
+        }
+    }
+    
+    private func showInitialStock() {
+        let stockOfFruit: [Fruit: Int] = juiceMaker.stockOfFruit
+        
+        for (fruit, stock) in stockOfFruit {
+            updateFruitLabel(for: fruit, stock: stock)
+        }
+    }
+    
+  
+     func updateFruitLabel(for fruit: Fruit, stock: Int) {
         
         switch fruit {
         case .strawberry:
@@ -74,11 +95,13 @@ class ViewController: UIViewController {
         show()
     }
     
+    
     func show() {
         let stockController = self.storyboard?.instantiateViewController(withIdentifier: "StockUpdateController") as? StockUpdateController
         stockController?.stockOfFruit = juiceMaker.stockOfFruit
         
         let nav = UINavigationController(rootViewController: stockController!)
+        nav.modalPresentationStyle = .fullScreen
         present(nav, animated: true)
     }
     
@@ -114,9 +137,7 @@ class ViewController: UIViewController {
         let message = fruit.description + AlertMessage.outOfStock
         let cancelAction = UIAlertAction(title:AlertMessage.cancel, style: .cancel)
         let okAction = UIAlertAction(title: AlertMessage.ok, style: .default) { _ in
-            
             self.show()
-            
         }
         let orderFailAlert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         
@@ -124,8 +145,5 @@ class ViewController: UIViewController {
         orderFailAlert.addAction(cancelAction)
         present(orderFailAlert, animated: true, completion: nil)
     }
-    
-    
-   
 }
 

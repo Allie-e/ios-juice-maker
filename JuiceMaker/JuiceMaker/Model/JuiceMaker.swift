@@ -53,9 +53,6 @@ struct JuiceMaker {
         return fruitStore.stockOfFruit
     }
     
-    func allStocka() -> [Fruit: Int] {
-        return fruitStore.stockOfFruit
-    }
 
     func makeFruitJuice(juice: Menu) {
         switch juice {
