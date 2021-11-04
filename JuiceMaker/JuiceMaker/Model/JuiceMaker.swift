@@ -52,6 +52,10 @@ struct JuiceMaker {
     var stockOfFruit: [Fruit: Int] {
         return fruitStore.stockOfFruit
     }
+<<<<<<< HEAD
+=======
+    
+>>>>>>> f5ab48408034dcecacfa0edc73c41a6dcb748842
 
     func makeFruitJuice(juice: Menu) {
         switch juice {
