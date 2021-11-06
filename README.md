@@ -4,10 +4,10 @@
 #### 🗓️ 프로젝트 기간: 2021.10.18 - 2021.11.5
 
 #### Contributor
-🍓 @wooyani77 🥭 @na-young-kwon
+🍓 [Allie](https://github.com/wooyani77) 🥭 [조이](https://github.com/na-young-kwon)
 
 #### Reviewer
-🍎 @AppleCEO
+🍎 [도미닉](https://github.com/AppleCEO)
 
 ##  목차
  * [학습 키워드](#학습-키워드)
