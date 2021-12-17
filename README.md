@@ -35,7 +35,7 @@
 
 
 
-## ✏️ 학습-키워드
+## ✏️ 학습 키워드
 - CustomStringConvertible, CaseIterable  
 - Enum - associated value  
 - Namespace  
